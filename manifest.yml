@@ -6,7 +6,4 @@ applications:
   memory: 96m
   instances: 1
   path: .
-declared-services:
-  myMicroservicesCloudant:
-    label: cloudantNoSQLDB
-    plan: Shared
+
