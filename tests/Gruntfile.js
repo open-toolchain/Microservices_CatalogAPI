@@ -4,7 +4,7 @@ var desireds = require('./desireds');
 var gruntConfig = {
         env: {
             test: {
-                CATALOG_API_TEST_SERVER: 'http://microservices-catalogapi-uparulek-142.mybluemix.net'
+                //CATALOG_API_TEST_SERVER: 'http://microservices-catalogapi-uparulek-142.mybluemix.net'
             }
         },
 
