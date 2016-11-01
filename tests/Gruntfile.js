@@ -3,9 +3,7 @@ var desireds = require('./desireds');
 
 var gruntConfig = {
         env: {
-            test: {
-                CATALOG_API_TEST_SERVER: 'http://microservices-catalogapi-uparulek-142.mybluemix.net'
-            }
+            // dynamically filled
         },
 
         mochaTest: {
