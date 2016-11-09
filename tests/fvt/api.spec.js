@@ -13,7 +13,7 @@
     */ 
 
     describe('API', function() {
-        this.timeout(100000);
+        this.timeout(20000);
         it('list all items', function(done) {
             utils.makeRestCall({method: 'GET'}, '/items', null, function(err, resp, body) {
                 //console.log(JSON.stringify(body, null, 4));
