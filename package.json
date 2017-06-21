@@ -21,7 +21,7 @@
   "devDependencies": {
     "async": "^1.5.2",
     "chai": "^3.4.1",
-    "chai-as-promised": "latest",
+    "chai-as-promised": "6.0.0",
     "colors": "latest",
     "grunt": "^0.4.5",
     "grunt-concurrent": "latest",
