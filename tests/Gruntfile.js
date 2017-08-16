@@ -11,11 +11,11 @@ var gruntConfig = {
         mochaTest: {
             'server-side': {
                 options: {
-                    reporter: 'json',
+                    reporter: 'XUnit',
                     clearRequireCache: true,
                     colors: true,
                     quite: true,
-                    captureFile: 'tests/server/mochatest.json',
+                    captureFile: 'tests/server/mochatest.xml',
                     gruntLogHeader: false
                 },
                 src: ['tests/server/*.spec.js']
@@ -93,6 +93,14 @@ var gruntConfig = {
                 //print: 'detail'
             }
         },
+
+        'makeReport-lcov': {
+            src: 'tests/server/coverage/reports/*.json',
+            options: {
+                type: 'lcov',
+                dir: 'tests/server/coverage/reports'
+            }
+        },
         
         simplemocha: {
             sauce: {
@@ -161,8 +169,11 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
+    grunt.renameTask('makeReport', 'makeReport-lcov');
+    grunt.loadNpmTasks('grunt-istanbul');
+
     grunt.registerTask('dev-test', ['env:test', 'clean:coverage', 'copy:resourcesForInstrumented', 'instrument', 'mochaTest:server-side-spec']);
-    grunt.registerTask('dev-test-cov', ['env:test', 'clean:coverage', 'copy:resourcesForInstrumented', 'instrument', 'mochaTest:server-side', 'storeCoverage', 'makeReport']);
+    grunt.registerTask('dev-test-cov', ['env:test', 'clean:coverage', 'copy:resourcesForInstrumented', 'instrument', 'mochaTest:server-side', 'storeCoverage', 'makeReport-lcov', 'makeReport']);
     grunt.registerTask('dev-fvtspec', ['env:test', 'clean:coverage', 'mochaTest:fvt-spec']);
     grunt.registerTask('dev-fvt', ['env:test', 'clean:coverage', 'mochaTest:fvt']);
     grunt.registerTask('test_real', ['env:chrome', 'simplemocha:sauce:' + _(desireds).keys().first()]);
