@@ -31,11 +31,11 @@ var gruntConfig = {
             },
             'fvt': {
                 options: {
-                    reporter: 'json',
+                    reporter: 'XUnit',
                     clearRequireCache: true,
                     colors: true,
                     quite: true,
-                    captureFile: 'tests/fvt/mochafvttest.json'
+                    captureFile: 'tests/fvt/mochafvttest.xml'
                 },
                 src: ['tests/fvt/*.spec.js']
             },
