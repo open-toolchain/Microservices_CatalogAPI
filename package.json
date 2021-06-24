@@ -6,8 +6,8 @@
 		"start": "node app.js"
 	},
 	"engines": {
-		"node": "6.7.0",
-		"npm": "3.5.2"
+		"node": "15.14.0",
+		"npm": "7.7.6"
 	},
 	"dependencies": {
 		"body-parser": "1.12.x",
