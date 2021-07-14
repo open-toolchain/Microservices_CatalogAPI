@@ -32,8 +32,8 @@ exports.loadTest = function(req, res) {
         }
     };
 
-    var itemId1 = "1f9e7891bffb03605e3a9b43f996f6ea";
-    var itemId2 = "9dce21273d13dc1dcb1b47370359e753";
+    var itemId1 = "";
+    var itemId2 = "";
     for (var i = 0; i < testCount; i++) {
         http.get({
             host: req.get('host'),
