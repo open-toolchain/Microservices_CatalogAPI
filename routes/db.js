@@ -1,5 +1,5 @@
 /*eslint-env node */
-var cloudant = require('cloudant')(cloudantService.credentials.url);
+var cloudant = require('@cloudant/cloudant')(cloudantService.credentials.url);
 exports.cloudant = cloudant;
 var itemsDb = cloudant.use('items');
 exports.itemsDb = itemsDb;
